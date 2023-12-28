@@ -3,6 +3,7 @@ package scaler.splitwise;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import scaler.splitwise.commands.Command;
 import scaler.splitwise.commands.CommandExecutor;
 
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 @SpringBootApplication
+@EnableJpaAuditing
 public class SplitwiseApplication implements CommandLineRunner {
 	private final Scanner scanner = new Scanner(System.in);
 	private final CommandExecutor commandExecutor;
