@@ -12,7 +12,7 @@
 	<artifactId>splitwise</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>splitwise</name>
-	<description>splitwise API for practicing mahine coding round </description>
+	<description>splitwise API for practicing machine coding round </description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
