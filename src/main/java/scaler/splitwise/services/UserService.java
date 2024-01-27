@@ -1,5 +1,8 @@
 package scaler.splitwise.services;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
@@ -17,10 +20,22 @@ public class UserService {
         String hashedPassword = passwordEncoder.encode(request.getPassword());
 
         User user = User.builder()
-            .name(request.getName())
-            .email(request.getEmail())
-            .password(hashedPassword).build();
+                .name(request.getName())
+                .email(request.getEmail())
+                .password(hashedPassword).build();
+
+        if (user == null)
+            return null;
 
         return userRepository.save(user);
+    }
+    
+    public List<User> findAllUsersByIDs(List<Long> Ids) {
+        List<User> users = new ArrayList<>();
+
+        if (Ids == null || Ids.isEmpty())
+            return users;
+
+        return userRepository.findAllById(Ids);
     }
 }
